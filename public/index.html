@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GPT-Image-1 Demo</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; max-width: 800px; margin: auto; }
+    textarea { width: 100%; box-sizing: border-box; margin-bottom: 0.5rem; }
+    label, select, button { margin-right: 0.5rem; margin-bottom: 0.5rem; }
+    #controls { display: flex; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; }
+    #result { margin-top: 1rem; }
+    #image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    #image-grid img { max-width: 100%; height: auto; border: 1px solid #ccc; }
+    #status { margin-top: 1rem; font-style: italic; }
+    .error { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Generate Images with gpt-image-1</h1>
+  <form id="prompt-form">
+    <label for="prompt">Enter your prompt:</label>
+    <textarea id="prompt" rows="4" placeholder="Describe the image(s) you want…" required></textarea><br/>
+    
+    <div id="controls">
+        <label for="num-images">Number of images:</label>
+        <select id="num-images">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <button type="submit" id="generate-button">Generate</button>
+        <button type="button" id="reset-button">Reset</button>
+    </div>
+  </form>
+  
+  <div id="status"></div>
+  <div id="result">
+      <div id="image-grid"></div>
+  </div>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>
+
